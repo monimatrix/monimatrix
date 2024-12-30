@@ -646,3 +646,23 @@
       flex-direction: column;
     }
   }
+
+.contact-box {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: red;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        .contact-content {
+            display: none;
+            margin-top: 10px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: 1px solid red;
+        }
