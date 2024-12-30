@@ -23,12 +23,28 @@
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
     <style>
+        .clock-container {
+            position: fixed; /* Fixed position to float above content */
+            top: 20px; /* Distance from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center adjustment */
+            display: flex; /* Flexbox to align items */
+            align-items: center; /* Align items vertically */
+            z-index: 1000; /* Ensure it stays above other content */
+        }
         .clock {
-            font-size: 48px;
+            font-size: 64px; /* Increased font size */
+            font-weight: bold; /* Make the text bold */
             color: green; /* Green text color */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+            margin-right: 20px; /* Space between clock and text */
+        }
+        .additional-text {
+            font-size: 24px; /* Font size for additional text */
+            color: #333; /* Darker color for contrast */
+        }
+        .content {
+            margin-top: 100px; /* Space for the fixed clock */
+            padding: 20px; /* Padding for content */
         }
     </style>
 </head>
@@ -69,7 +85,10 @@
         </div>
         <p>
             <br>
-       <div class="clock" id="digitalClock"></div>
+       <div class="clock-container">
+    <div class="clock" id="digitalClock"></div>
+    <div class="additional-text">Your Text Here</div>
+</div>
         <div class="dots">
             <div class="dot active" onclick="changeSlide(0)"></div>
             <div class="dot" onclick="changeSlide(1)"></div>
