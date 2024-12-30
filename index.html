@@ -76,6 +76,21 @@ to be here online to serve you better with our FX trading skill.<br>Click here t
         </div>
     </div>
     </section>
+    <section>
+        <div class="contact-box" onclick="toggleContact()">
+    CONTACT US
+    <div class="contact-content" id="contactContent">
+        <p>For enquiries, email: monimatricventures@gmail.com</p>
+        <p>For enquiries, phone: +234 (0) 8189207600</p>
+        <p>+234 (0) 8167674632</p>
+        <p>Contact us via address: </p>
+        <p>No 7b Omudioga Rd, Port Harcourt</p>
+        <p>Rivers State, Nigeria</p>
+        <p>Follow us on Twitter now (X
+        ) monimatrix</p>
+    </div>
+</div>
+    </section>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
     const sections = {
@@ -139,6 +154,15 @@ to be here online to serve you better with our FX trading skill.<br>Click here t
             link.click();
             document.body.removeChild(link);
         }
+
+         function toggleContact() {
+        const content = document.getElementById('contactContent');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
     </script>
 </body>
         <div class="footer-bottom">
