@@ -657,6 +657,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
             z-index: 1000;
+            float: right;
         }
         .contact-content {
             display: none;
@@ -665,4 +666,5 @@
             color: black;
             padding: 10px;
             border: 1px solid red;
+            float: right;
         }
