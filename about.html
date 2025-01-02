@@ -193,6 +193,21 @@
     function showContent(content) {
         document.getElementById('content').innerText = content;
     }
+         function changeSlide(index) {
+        slideIndex = index;
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+
+        slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
+    }
+
+    // Optional: Auto slide every 5 seconds
+    setInterval(() => {
+        slideIndex = (slideIndex + 1) % 10; // Loop through slides
+        changeSlide(slideIndex);
+    }, 5000);
 </script>
 
 </body>
