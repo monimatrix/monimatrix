@@ -48,11 +48,14 @@
         }
          .navbar {
             display: flex;
-            background-color: white;
-            padding: 10px;
-        }
-        .navbar-item {
-            position: relative;
+            padding: 10px 20px;
+            position: absolute; /* Absolute positioning */
+            top: 40px; /* Space from the top */
+            left: 50%; /* Centering */
+            transform: translateX(-50%); /* Centering adjustment */
+            z-index: 10; /* Higher z-index to float above slides */
+            color: black; /* Navbar text color */
+       .navbar-item {
             margin-right: 20px;
         }
         .navbar-link {
@@ -61,12 +64,10 @@
             color: black;
             display: inline-block;
         }
-        .dropdown {
+         .dropdown {
             display: none;
             position: absolute;
             background-color: white;
-            top: 100%;
-            left: 0;
             min-width: 150px;
             z-index: 1;
         }
