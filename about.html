@@ -46,6 +46,43 @@
             margin-top: 100px; /* Space for the fixed clock */
             padding: 20px; /* Padding for content */
         }
+         .navbar {
+            display: flex;
+            background-color: white;
+            padding: 10px;
+        }
+        .navbar-item {
+            position: relative;
+            margin-right: 20px;
+        }
+        .navbar-link {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: black;
+            display: inline-block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+        .navbar-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-item:hover {
+            background-color: green;
+            color: white;
+        }
     </style>
 </head>
 <body>
