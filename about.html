@@ -23,24 +23,21 @@
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
     <style>
-        .clock-container {
-            position: fixed; /* Fixed position to float above content */
-            top: 220px; /* Distance from the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center adjustment */
-            display: flex; /* Flexbox to align items */
-            align-items: center; /* Align items vertically */
-            z-index: 1000; /* Ensure it stays above other content */
+      .clock-container {
+            background-color: white; /* White background for the clock */
+            padding: 30px; /* Increased padding around the content */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            display: flex; /* Flexbox layout */
+            align-items: center; /* Center items vertically */
         }
         .clock {
-            font-size: 64px; /* Increased font size */
-            font-weight: bold; /* Make the text bold */
-            color: green; /* Green text color */
+            font-size: 6em; /* Increased font size for the clock */
             margin-right: 20px; /* Space between clock and text */
         }
         .additional-text {
-            font-size: 24px; /* Font size for additional text */
-            color: #333; /* Darker color for contrast */
+            font-size: 1.5em; /* Larger font size for additional text */
+            color: #555; /* Slightly darker color for contrast */
         }
         .content {
             margin-top: 100px; /* Space for the fixed clock */
@@ -158,12 +155,10 @@
             <p>
                 <br>
                 <p>
-         <div class="slider-box" id="textBox">
-       <div class="clock-container">
-    <div class="clock" id="digitalClock"></div>
+     <div class="clock-container">
+    <div class="clock" id="digitalClock">12:00</div>
     <div class="additional-text">Time is Money, use your time well!!!</div>
 </div>
-         </div>
         <div class="dots">
             <div class="dot active" onclick="changeSlide(0)"></div>
             <div class="dot" onclick="changeSlide(1)"></div>
@@ -179,17 +174,18 @@
     </div>
     </section>
     <script>
-    function updateClock() {
+   function updateClock() {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
+        let hours = now.getHours();
         const minutes = String(now.getMinutes()).padStart(2, '0');
-        
-        const timeString = `${hours}:${minutes}`;
-        document.getElementById('digitalClock').textContent = timeString;
+
+        // Convert to 12-hour format
+        hours = hours % 12 || 12; // Convert 0 to 12
+        document.getElementById('digitalClock').textContent = `${hours}:${minutes}`;
     }
 
-    setInterval(updateClock, 60000); // Update clock every minute
-    updateClock(); // Initial call to display the time immediately
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial call to display time immediately
 
         
     function showContent(content) {
