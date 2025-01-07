@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="Author" content="Dooyaabari Imeah">
     <!--This website was designed by Dooyaabari Imeah-->
     <title>Monimatrix</title>
@@ -23,6 +24,9 @@
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
     <style>
+        body{
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
      .clock-container {
             position: fixed; /* Fixed positioning */
             top: 300px; /* Space from the top */
@@ -48,43 +52,56 @@
             margin-top: 100px; /* Space for the fixed clock */
             padding: 20px; /* Padding for content */
         }
-         .navbar {
-            display: flex;
-            padding: 10px 20px;
-            position: absolute; /* Absolute positioning */
-            top: 40px; /* Space from the top */
-            left: 50%; /* Centering */
-            transform: translateX(-50%); /* Centering adjustment */
-            z-index: 10; /* Higher z-index to float above slides */
-            color: black; /* Navbar text color */
-       .navbar-item {
+          .navbar {
+            display: flex; /* Use flexbox for horizontal alignment */
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-item {
+            position: relative;
             margin-right: 20px;
         }
+        
         .navbar-link {
             text-decoration: none;
             padding: 10px 15px;
             color: black;
             display: inline-block;
         }
-         .dropdown {
+        
+        .dropdown {
             display: none;
             position: absolute;
             background-color: white;
+            top: 100%;
+            left: 0;
             min-width: 150px;
-            z-index: 1;
+            z-index: 1000; /* Floats above other content */
         }
+        
         .navbar-item:hover .dropdown {
             display: block;
         }
+        
         .dropdown-item {
             padding: 10px 15px;
             color: black;
             text-decoration: none;
             display: block;
         }
+        
         .dropdown-item:hover {
             background-color: green;
             color: white;
+        }
+        
+        /* Content sections */
+        .section {
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            display: none; /* Hidden by default */
         }
     </style>
 </head>
@@ -112,33 +129,33 @@
         <br>
         <p>
             <br>
-    <div class="slider">
-    <div class="navbar">
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">About Us</a>
-            <div class="dropdown">
-                <a href="#Aboutus" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 1')">About Us</a>
-                <a href="#Joinourtutorial" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 2')">Join Our Tutorial Class</a>
-                <a href="#copyourtrade" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Copy our Trade via HFM broker Portal</a>
-            </div>
-        </div>
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">Join Our Tutorial Class</a>
-            <div class="dropdown">
-                <a href="#Aboutus" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 1')">Item 1</a>
-                <a href="#Joinourtutorial" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 2')">Item 2</a>
-                <a href="#copyourtrade" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 3')">Item 3</a>
-            </div>
-        </div>
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">Copy our Trade via HFM broker Portal</a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 1')">Item 1</a>
-                <a href="#" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 2')">Item 2</a>
-                <a href="#" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 3')">Item 3</a>
-            </div>
+   <div class="navbar">
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">About Us</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showContent('about1')">Company History</a>
+            <a href="#" class="dropdown-item" onclick="showContent('about2')">Our Mission</a>
+            <a href="#" class="dropdown-item" onclick="showContent('about3')">Meet the Team</a>
         </div>
     </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">Join Our Tutorial Class</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showContent('tutorial1')">Class Schedule</a>
+            <a href="#" class="dropdown-item" onclick="showContent('tutorial2')">Registration Info</a>
+            <a href="#" class="dropdown-item" onclick="showContent('tutorial3')">FAQs</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">Copy Our Trade via HFM Broker Portal</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showContent('trade1')">Getting Started</a>
+            <a href="#" class="dropdown-item" onclick="showContent('trade2')">Trading Strategies</a>
+            <a href="#" class="dropdown-item" onclick="showContent('trade3')">Support</a>
+        </div>
+    </div>
+</div>
+
    <div class="slider">
     <div class="slides">
         <div class="slide" style="background-color: #ff7e5f;"></div>
@@ -180,6 +197,54 @@
             <div class="dot" onclick="changeSlide(10)"></div>
         </div>
     </div>
+    <div class="navbar">
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">About Us</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showContent('about1')">Company History</a>
+            <a href="#" class="dropdown-item" onclick="showContent('about2')">Our Mission</a>
+            <a href="#" class="dropdown-item" onclick="showContent('about3')">Meet the Team</a>
+        </div>
+    </div>
+   <div id="content">
+    <div id="about1" class="section">
+        <h2>Company History</h2>
+        <p>Details about the company history go here.</p>
+    </div>
+    <div id="about2" class="section">
+        <h2>Our Mission</h2>
+        <p>Details about our mission go here.</p>
+    </div>
+    <div id="about3" class="section">
+        <h2>Meet the Team</h2>
+        <p>Information about our team goes here.</p>
+    </div>
+    <div id="tutorial1" class="section">
+        <h2>Class Schedule</h2>
+        <p>Information about the class schedule goes here.</p>
+    </div>
+    <div id="tutorial2" class="section">
+        <h2>Registration Info</h2>
+        <p>Information on how to register goes here.</p>
+    </div>
+    <div id="tutorial3" class="section">
+        <h2>FAQs</h2>
+        <p>Frequently Asked Questions go here.</p>
+    </div>
+    <div id="trade1" class="section">
+        <h2>Getting Started</h2>
+        <p>Information on getting started goes here.</p>
+    </div>
+    <div id="trade2" class="section">
+        <h2>Trading Strategies</h2>
+        <p>Details on trading strategies go here.</p>
+    </div>
+    <div id="trade3" class="section">
+        <h2>Support</h2>
+        <p>Support information goes here.</p>
+    </div>
+</div>
+
     </section>
     <script>
    function updateClock() {
@@ -214,6 +279,21 @@
         slideIndex = (slideIndex + 1) % 10; // Loop through slides
         changeSlide(slideIndex);
     }, 5000);
+
+         function showContent(id) {
+        // Hide all sections first
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Show the selected section
+        const selectedSection = document.getElementById(id);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+            selectedSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the selected section
+        }
+    }
 </script>
 
 </body>
