@@ -23,6 +23,56 @@
     <meta name="twitter:description" content="Copy Trade Provider and FOREX Trade Tutorial Giant." />
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            background-color: white;
+            padding: 10px;
+            position: relative; /* Ensure the navbar is positioned */
+            z-index: 10; /* Higher z-index for navbar */
+        }
+        .navbar-item {
+            position: relative;
+            margin-right: 20px;
+        }
+        .navbar-link {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: black;
+            display: inline-block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            z-index: 20; /* Higher z-index for dropdown */
+        }
+        .navbar-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-item:hover {
+            background-color: green;
+            color: white;
+        }
+        #content {
+            padding: 20px;
+            margin-top: 10px; /* Add some space below the navbar */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -45,4 +95,33 @@
             </nav>
     </header>
 </body>
+    <div class="navbar">
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">Menu 1</a>
+        <div class="dropdown">
+            <a href="#content1" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 1')">Item 1</a>
+            <a href="#content2" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 2')">Item 2</a>
+            <a href="#content3" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Item 3</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">Menu 2</a>
+        <div class="dropdown">
+            <a href="#content4" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 1')">Item 1</a>
+            <a href="#content5" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 2')">Item 2</a>
+            <a href="#content6" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 3')">Item 3</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link">Menu 3</a>
+        <div class="dropdown">
+            <a href="#content7" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 1')">Item 1</a>
+            <a href="#content8" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 2')">Item 2</a>
+            <a href="#content9" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 3')">Item 3</a>
+        </div>
+    </div>
+</div>
+
+<div id="content" style="padding: 20px; margin-top: 10px;"></div>
+
 </html>
