@@ -256,6 +256,13 @@ reflects the long-term commitment required in FX trading.</p></div>
         // Smooth scroll to the content
         document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
     }
+             function showContent(content) {
+        document.getElementById('content').innerText = content; // Update the content div
+        // Hide all content sections
+        document.querySelectorAll('[id^="content"]').forEach(div => div.style.display = "none");
+        // Show the specific content
+        document.getElementById(content.split(' ')[2]).style.display = "block";
+    }
         </script>
 </body>
     
