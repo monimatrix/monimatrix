@@ -36,7 +36,7 @@
             position: relative; /* Ensure the navbar is positioned */
             z-index: 10; /* Higher z-index for navbar */
             justify-content: center; /* Center the navbar items */
-             gap: 20px; /* Space between each navbar item */
+             gap: 50px; /* Space between each navbar item */
         }
         .navbar-item {
             position: relative;
@@ -104,32 +104,46 @@
                 <br>
     <div class="navbar">
     <div class="navbar-item">
-        <a href="#" class="navbar-link">Menu 1</a>
+        <a href="#" class="navbar-link">About us</a>
         <div class="dropdown">
-            <a href="#content1" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 1')">Item 1</a>
-            <a href="#content2" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 2')">Item 2</a>
-            <a href="#content3" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Item 3</a>
+            <a href="#content1" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 1')">Who is monimatrix</a>
+            <a href="#content2" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 2')">The Function of Monimatrix</a>
+            <a href="#content3" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Advantage of joining Monimatrix</a>
+            <a href="#content4" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Disadvantage of joining Monimatrix</a>
+            <a href="#content5" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Our Motto</a>
+            <a href="#content6" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Our Goals</a>
+            <a href="#content7" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Funds Safety</a>
+            <a href="#content8" class="dropdown-item" onclick="showContent('Content for Menu 1 - Item 3')">Advice</a>
         </div>
     </div>
     <div class="navbar-item">
-        <a href="#" class="navbar-link">Menu 2</a>
+        <a href="#" class="navbar-link">Join Our Tutorial Classes</a>
         <div class="dropdown">
-            <a href="#content4" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 1')">Item 1</a>
-            <a href="#content5" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 2')">Item 2</a>
-            <a href="#content6" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 3')">Item 3</a>
+            <a href="#content4" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 1')">Free FX Class Training</a>
+            <a href="#content5" class="dropdown-item" onclick="showContent('Content for Menu 2 - Item 2')">Paid FX Class Training</a>
         </div>
     </div>
     <div class="navbar-item">
-        <a href="#" class="navbar-link">Menu 3</a>
+        <a href="#" class="navbar-link">Copy Our Trade Via HFM Broker Portal</a>
         <div class="dropdown">
-            <a href="#content7" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 1')">Item 1</a>
-            <a href="#content8" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 2')">Item 2</a>
-            <a href="#content9" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 3')">Item 3</a>
+            <a href="#content7" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 1')">Copy Our FX Signal</a>
+            <a href="#content8" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 2')">HFM Affiliate Enrolment</a>
+            <a href="#content9" class="dropdown-item" onclick="showContent('Content for Menu 3 - Item 3')">Green Investment</a>
         </div>
     </div>
 </div>
 
 <div id="content" style="padding: 20px; margin-top: 10px;"></div>
+    <!-- Additional content sections for scrolling -->
+<div id="content1" style="display:none;">Content for Menu 1 - Item 1</div>
+<div id="content2" style="display:none;">Content for Menu 1 - Item 2</div>
+<div id="content3" style="display:none;">Content for Menu 1 - Item 3</div>
+<div id="content4" style="display:none;">Content for Menu 2 - Item 1</div>
+<div id="content5" style="display:none;">Content for Menu 2 - Item 2</div>
+<div id="content6" style="display:none;">Content for Menu 2 - Item 3</div>
+<div id="content7" style="display:none;">Content for Menu 3 - Item 1</div>
+<div id="content8" style="display:none;">Content for Menu 3 - Item 2</div>
+<div id="content9" style="display:none;">Content for Menu 3 - Item 3</div>
         <script>
             function showContent(content) {
         document.getElementById('content').innerText = content;
