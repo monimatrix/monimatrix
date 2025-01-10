@@ -94,6 +94,14 @@
                 </ul>
             </nav>
     </header>
+    <p>
+        <br>
+        <p>
+            <br>
+            <p>
+                <br>
+                <p>
+                    <br>
     <div class="navbar">
     <div class="navbar-item">
         <a href="#" class="navbar-link">Menu 1</a>
@@ -122,6 +130,13 @@
 </div>
 
 <div id="content" style="padding: 20px; margin-top: 10px;"></div>
+        <script>
+            function showContent(content) {
+        document.getElementById('content').innerText = content;
+        // Smooth scroll to the content
+        document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
+    }
+        </script>
 </body>
     
 
