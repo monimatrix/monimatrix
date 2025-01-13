@@ -252,10 +252,19 @@ investment strategy with no possibility for refunds. This is crucial to understa
 reflects the long-term commitment required in FX trading.</p></div>
     
         <script>
-            function showContent(content) {
-        document.getElementById('content').innerText = content;
-        // Smooth scroll to the content
-        document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
+            function showContent(contentId, contentText) {
+        // Hide all content sections
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Show the selected content section
+        const selectedContent = document.getElementById(contentId);
+        selectedContent.style.display = 'block';
+
+        // Scroll to the content section
+        selectedContent.scrollIntoView({ behavior: 'smooth' });
     }
             
         </script>
