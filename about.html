@@ -347,32 +347,22 @@ reflects the long-term commitment required in FX trading
     
         <script>
             function showContent(contentId) {
-            // Hide all content sections
+            // Hide the clock container
+            document.getElementById('clockContainer').style.display = 'none';
+
+            // Clear previous content and show new content
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => {
                 content.style.display = 'none';
             });
 
-            // Show the selected content section
-            const selectedContent = document.getElementById(contentId);
-            selectedContent.style.display = 'block';
-
-            // Scroll to the content section
-            selectedContent.scrollIntoView({ behavior: 'smooth' });
-        }
-
-
-            function showContent(contentId) {
-            // Hide the clock container
-            document.getElementById('clockContainer').style.display = 'none';
-
             // Get selected content
             const selectedContent = document.getElementById(contentId);
             selectedContent.style.display = 'block';
 
-            // Display the selected content in the clock container
+            // Display the selected content in the content area
             document.getElementById('content').innerHTML = selectedContent.innerHTML;
-            document.getElementById('content').style.display = 'flex'; // Ensure it's displayed as flex
+            document.getElementById('content').style.display = 'flex'; // Ensure it's displayed
         }
 
         function updateClock() {
