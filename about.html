@@ -71,20 +71,42 @@
             background-color: green;
             color: white;
         }
+        .clock-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center content */
+            width: 600px; /* Set a fixed width */
+            height: 400px; /* Set a fixed height */
+            padding: 20px;
+            background-color: white; /* Background for the clock area */
+            border: 2px solid black; /* Optional: border around the clock */
+            border-radius: 10px; /* Optional: rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for a nice effect */
+            position: absolute; /* Position absolute to place on top of the slider */
+            top: 250px; /* Adjust vertical position */
+            left: 350px; /* Centralized position */
+        }
         #content {
             padding: 20px;
             margin-top: 10px; /* Add some space below the navbar */
+            display: flex; /* Display as flex */
+            align-items: flex-start; /* Align items to the start */
+            justify-content: center;
+            height: 100%; /* Fill the container */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+            max-height: 360px; /* Set a maximum height for the container */
         }
         .content {
-    display: none; /* Initially hidden */
-    line-height: 1.6; /* Adjust line spacing */
-    padding: 20px; /* Space inside the content area */
-    margin: 10px 0; /* Space between content sections */
-    background-color: rgba(240, 240, 240, 0.9); /* Semi-transparent light gray */
-    border: 1px solid #ccc; /* Optional: Add a border */
-    border-radius: 5px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-}
+            display: none; /* Initially hidden */
+            line-height: 1.6; /* Adjust line spacing */
+            padding: 20px; /* Space inside the content area */
+            margin: 10px 0; /* Space between content sections */
+            background-color: rgba(240, 240, 240, 0.9); /* Semi-transparent light gray */
+            border: 1px solid #ccc; /* Optional: Add a border */
+            border-radius: 5px; /* Optional: Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            min-width: 550px; /* Ensure minimum width for content */
+        }
 
       .clock-container {
         display: flex;
@@ -340,27 +362,32 @@ reflects the long-term commitment required in FX trading
         }
 
 
-            function updateClock() {
-        const now = new Date();
-        let hours = now.getHours();
-        const minutes = now.getMinutes();
+            function showContent(contentId) {
+            // Hide the clock container
+            document.getElementById('clockContainer').style.display = 'none';
 
-        // Convert to 12-hour format
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
+            // Get selected content
+            const selectedContent = document.getElementById(contentId);
+            selectedContent.style.display = 'block';
 
-        // Format minutes
-        const formattedMinutes = String(minutes).padStart(2, '0');
+            // Display the selected content in the clock container
+            document.getElementById('content').innerHTML = selectedContent.innerHTML;
+            document.getElementById('content').style.display = 'flex'; // Ensure it's displayed as flex
+        }
 
-        // Update the clock display
-        document.getElementById('clock').innerText = `${hours}:${formattedMinutes} ${ampm}`;
-    }
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${formattedMinutes} ${ampm}`;
+        }
 
-    // Update the clock every minute
-    setInterval(updateClock, 60000);
-    // Initialize clock display
-    updateClock();
+        setInterval(updateClock, 60000);
+        updateClock();
 
              let slideIndex = 0;
 
