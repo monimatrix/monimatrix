@@ -28,6 +28,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            position: relative; /* Required for absolute positioning of the clock 
         }
          .navbar {
             display: flex;
@@ -38,6 +39,7 @@
             z-index: 10; /* Higher z-index for navbar */
             justify-content: center; /* Center the navbar items */
             gap: 50px; /* Space between each navbar item */
+            overflow: hidden;
         }
         .navbar-item {
             position: relative;
@@ -71,61 +73,35 @@
             background-color: green;
             color: white;
         }
-        .clock-container {
+       clock-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center content */
-            width: 600px; /* Set a fixed width */
-            height: 400px; /* Set a fixed height */
-            padding: 20px;
-            background-color: white; /* Background for the clock area */
-            border: 2px solid black; /* Optional: border around the clock */
-            border-radius: 10px; /* Optional: rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for a nice effect */
-            position: absolute; /* Position absolute to place on top of the slider */
-            top: 250px; /* Adjust vertical position */
-            left: 350px; /* Centralized position */
-        }
-        #content {
-            padding: 20px;
-            margin-top: 10px; /* Add some space below the navbar */
-            display: flex; /* Display as flex */
-            align-items: flex-start; /* Align items to the start */
             justify-content: center;
-            height: 100%; /* Fill the container */
-            overflow-y: auto; /* Enable vertical scrolling if content overflows */
-            max-height: 360px; /* Set a maximum height for the container */
+            width: 600px;
+            height: 400px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 250px;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust position to truly center */
+            overflow: hidden; /* Hide overflow to prevent scrollbar in clock */
+        }
+        #contentBox {
+            max-height: 100px; /* Limit height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            font-size: 36px; /* Bigger font size */
+            font-weight: bold; /* Bold text */
+            display: none; /* Initially hidden */
         }
         .content {
-            display: none; /* Initially hidden */
-            line-height: 1.6; /* Adjust line spacing */
-            padding: 20px; /* Space inside the content area */
-            margin: 10px 0; /* Space between content sections */
-            background-color: rgba(240, 240, 240, 0.9); /* Semi-transparent light gray */
-            border: 1px solid #ccc; /* Optional: Add a border */
-            border-radius: 5px; /* Optional: Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-            min-width: 550px; /* Ensure minimum width for content */
-        }
-
-      .clock-container {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Center content */
-        width: 600px; /* Set a fixed width */
-        height: 400px; /* Set a fixed height */
-        padding: 20px;
-        background-color: white; /* Background for the clock area */
-        border: 2px solid black; /* Optional: border around the clock */
-        border-radius: 10px; /* Optional: rounded corners */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for a nice effect */
-        position: absolute; /* Position absolute to place on top of the slider */
-        top: 100px; /* Adjust vertical position */
-        left: 180px; /* Centralized position */
-    }
-        .clock {
-            font-size: 48px;
-            margin-right: 20px; /* Space between clock and text */
+            font-size: 36px; /* Bigger font size */
+            font-weight: bold; /* Bold text */
         }
         .time-text {
             font-size: 24px;
@@ -346,39 +322,30 @@ reflects the long-term commitment required in FX trading
     </div>
     
         <script>
-            function showContent(contentId) {
-            // Hide the clock container
-            document.getElementById('clockContainer').style.display = 'none';
+            function showText(text) {
+        const clock = document.getElementById('clock');
+        const contentBox = document.getElementById('contentBox');
+        
+        // Fade out the clock
+        clock.style.opacity = '0';
+        
+        // After fading out, update the content and fade it in
+        setTimeout(() => {
+            clock.style.display = 'none'; // Hide clock
+            contentBox.innerHTML = text; // Set new content
+            contentBox.style.display = 'block'; // Show new content
+            contentBox.style.opacity = '1'; // Fade in the new content
+        }, 500); // Time to match the fade out duration
+    }
 
-            // Clear previous content and show new content
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => {
-                content.style.display = 'none';
-            });
-
-            // Get selected content
-            const selectedContent = document.getElementById(contentId);
-            selectedContent.style.display = 'block';
-
-            // Display the selected content in the content area
-            document.getElementById('content').innerHTML = selectedContent.innerHTML;
-            document.getElementById('content').style.display = 'flex'; // Ensure it's displayed
-        }
-
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = now.getMinutes();
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            const formattedMinutes = String(minutes).padStart(2, '0');
-            document.getElementById('clock').innerText = `${hours}:${formattedMinutes} ${ampm}`;
-        }
-
-        setInterval(updateClock, 60000);
-        updateClock();
-
+    // Set initial clock in 12-hour format
+    setInterval(() => {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit', hour12: true };
+        const timeString = now.toLocaleTimeString([], options);
+        document.getElementById('clock').innerText = `${timeString} TIME IS MONEY!`;
+    }, 1000);
+            
              let slideIndex = 0;
 
     function changeSlide(index) {
