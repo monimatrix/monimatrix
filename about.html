@@ -23,57 +23,28 @@
     <meta name="twitter:description" content="Copy Trade Provider and FOREX Trade Tutorial Giant." />
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
-  <style>
+   <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            position: relative; /* Required for absolute positioning of the clock 
+            position: relative; /* Required for absolute positioning of the clock */
         }
-         .navbar {
-            display: flex;
-            background-color: white;
-            padding: 10px;
-            position: sticky; /* Make the navbar sticky */
-            top: 0; /* Stick to the top of the viewport */
-            z-index: 10; /* Higher z-index for navbar */
-            justify-content: center; /* Center the navbar items */
-            gap: 50px; /* Space between each navbar item */
+        .nav {
+            background-color: #333;
             overflow: hidden;
         }
-        .navbar-item {
-            position: relative;
-            margin-right: 20px;
-        }
-        .navbar-link {
-            text-decoration: none;
-            padding: 10px 15px;
-            color: black;
-            display: inline-block;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: white;
-            top: 100%;
-            left: 0;
-            min-width: 150px;
-            z-index: 20; /* Higher z-index for dropdown */
-        }
-        .navbar-item:hover .dropdown {
+        .nav a {
+            float: left;
             display: block;
-        }
-        .dropdown-item {
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-item:hover {
-            background-color: green;
             color: white;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
         }
-       clock-container {
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .clock-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -103,10 +74,8 @@
             font-size: 36px; /* Bigger font size */
             font-weight: bold; /* Bold text */
         }
-        .time-text {
-            font-size: 24px;
-        }
     </style>
+       
 </head>
 <body>
     <header>
@@ -128,44 +97,16 @@
                 </ul>
             </nav>
     </header>
-    <p>
-        <br>
-        <p>
-            <br>
-            <p>
-                <br>
-    <div class="navbar">
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">About us</a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-item" onclick="showContent('content1')">Who is monimatrix</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content2')">The Function of Monimatrix</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content3')">Advantage of joining Monimatrix</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content4')">Disadvantage of joining Monimatrix</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content5')">Our Motto</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content6')">Our Goals</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content7')">Funds Safety</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content8')">Advice</a>
-            </div>
-        </div>
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">Join Our Tutorial Classes</a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-item" onclick="showContent('content9')">Free FX Class Training</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content10')">Paid FX Class Training</a>
-            </div>
-        </div>
-        <div class="navbar-item">
-            <a href="#" class="navbar-link">Copy Our Trade Via HFM Broker Portal</a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-item" onclick="showContent('content11')">Copy Our FX Signal</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content12')">HFM Affiliate Enrolment</a>
-                <a href="#" class="dropdown-item" onclick="showContent('content13')">Green Investment</a>
-            </div>
-        </div>
-    </div>
+  <div class="nav">
+    <a href="#" onclick="showText('Content for Item 1: This is an example of long content that might need scrolling.')">Item 1</a>
+    <a href="#" onclick="showText('Content for Item 2: Here is some more text that could potentially be very long and require scrolling.')">Item 2</a>
+    <a href="#" onclick="showText('Content for Item 3: Additional content goes here and it can be quite lengthy.')">Item 3</a>
+</div>
 
-    <div id="content" style="padding: 20px; margin-top: 10px;"></div>
+<div class="clock-container">
+    <div id="clock" class="content">12:00 AM <span>TIME IS MONEY!</span></div>
+    <div id="contentBox" class="content"></div>
+</div>
     <section>
          <div class="slider">
         <div class="slides">
@@ -180,14 +121,7 @@
             <div class="slide" style="background-color: #ffccbc;"></div>
             <div class="slide" style="background-color: #ff9a9e;"></div>
         </div>
-        <div class="clock-container">
-    <div class="clock" id="clock">--:--</div>
-    <div class="time-text">Time is Money</div>
-</div>
-             <br>
-             <p>
-                <br>
-                 <p>
+       
         <div class="dots">
             <div class="dot active" onclick="changeSlide(0)"></div>
             <div class="dot" onclick="changeSlide(1)"></div>
@@ -202,127 +136,8 @@
         </div>
     </div>
     </section>
-
-    <div id="content1" class="content">MONIMATRIX MULTIVENTURES is an indigenous Nigerian general contracts and merchandise<br>
-business with registration number 7447941, Tin number 1074059732 for authenticity in the<br>
-business arena of FX signal and FX supper lecture.</div>
-    <div id="content2" class="content">We trade the FX market, provide FX trade signals to investors and also teach FX.</div>
-    <div id="content3" class="content">
-        <ol>
-        <li>You will have access to multiple stream of income.</li>
-<li>The profit you will experience joining MONIMATRIX will be better.</li>
-<li>Your local bank account will be connected to the world richest market on earth.</li>
-<li>Forex market is not a ponzi scheme.</li>
-        </ol>
-    </div>
-    <div id="content4" class="content">
-        <ol>
-        <li>You lose quarter of your investment whenever we trade badly.</li>
- <li>All your investment could be erased if the bad trade is unbearable.</li>
- <li>Forex market is too risky due to its flexibility.</li>
- <li>Participant cannot hold MONIMATRIX accountable whenever a quarter or the entire
-investment erase.</li>
-        </ol>
-    </div>
-    <div id="content5" class="content">Slow and steady is our motto</div>
-    <div id="content6" class="content">Is to be the best Forex copy trade provider all kind of investor would wish to have.</div>
-    <div id="content7" class="content">As they say safety first in whatever you are doing. We at MONIMATRIX top priority is to safe guide<br>
-investor’s funds with high-tech proficiencies that controls trade decisions. Our system is well<br>
-equipped with a good tool that handles risk reward ratio at the FX marketplace.</div>
-    <div id="content8" class="content">FX market is extremely volatile. On that, we at Monimatrix always advice followers to drop the<br>
-investment they will afford to lose.</div>
-    <div id="content9" class="content">Free FX Class Training...</div>
-    <div id="content10" class="content">Paid FX Class Training...</div>
-    <div id="content11" class="content">To copy our FX signal please paste our FX broker website https@hfm.com
-into your web browser and Follow the steps:<br>
-        <ol>
-<li> When the site opens find Register button and click at it.</li>
- <li>A Registration window will come-up for you to fill your data.</li>
- <li>Then carefully follow the registration prompt instructions.</li>
-<li> When you are through with the registration on the hfm prompt
-instruction, do the following to copy our trade within your myhf id
-environment.</li>
- <li>Click HFcopy button,</li>
- <li>A dropdown menu will display, and then select Follow A Strategy.</li>
- <li>A Follow A Strategy environment will display.</li>
- <li>Then at the all strategies search engine within Follow A Strategy
-environment type MONIMATRIX.</li>
- <li>Click search.</li>
-<li> MONIMATRIX will display for you to follow.</li>
-<li> Then follow us via MONIMATRIX on X( formerly Twitter ).</li>
-        </ol>
-    </div>
-    <div id="content12" class="content">Embark on an affiliate partnership with us, specifically designed to bring clients to our
-HFM Broker and discover a world of advantages:<br>
-To catch up with this unquantifiable advantage of HFM Affiliates Enrolment program
-offering all the client have to do is to allow us train him/her for free and then register him/her
-to our HFM broker platform.<br>
-The beneficiaries of this program will have good opportunity to earn substantial
-commissions. For every client they refer and engage after our first training with them,
-they'll receive a cut based on their trading volume. This model not only incentivizes you/
-beneficiaries to grow your network but also ensures you benefit from the long-term
-success of each trader you/ beneficiaries also bring on board.<br>
-Our partnership with a beneficiary of this program includes comprehensive marketing
-support. We provide you with tailored marketing materials, from banners to social media
-content, all designed to make your promotional efforts seamless and effective. This
-reduces your workload while maximizing your reach, helping you attract more clients
-with less effort after this introductory affiliate’s program enlightenment.<br>
-By referring clients to our free class, you're not just gaining potential earnings; you're
-offering them a valuable educational resource. Our class provides foundational
-knowledge in FX trading, including insights into market trends, AI-driven strategies, and
-risk management, with a focus on the volatile gold market. This educational aspect can
-lead to more confident and successful traders, which in turn could mean higher trading
-volumes and thus, higher commissions for you.<br>
-Moreover, this partnership fosters a community. You'll join a network of like-minded
-affiliates, sharing strategies, success stories, and learning from each other's
-experiences. This community aspect not only enhances your marketing approach but
-also provides a platform for continuous learning and growth.<br>
-In summary, this affiliate program is an opportunity to grow your income while
-contributing to the educational journey of new traders, creating a win-win scenario in the
-dynamic world of FX trading.<br>
-To enrol please use our HFM affiliate link<a href="https://www.hfm.com/int/en/?refid=30412823" target="blank_">https://www.hfm.com/int/en/?refid=30412823</a> for
-registration processes. In your registration process remember to use our REF ID: 30412823 to signify
-that we link/bring you to HFM broker. Endeavour to use our initials when registering.
-Note: For now this HFM Affiliates Enrolment program is not available.</div>
-    <div id="content13" class="content"><b>Exclusive Invitation to Fund Our FX Green Investment Program
-Dear Prospective Investor,</b><br>
-In an era where financial gains and ecological preservation can go hand in hand, we are
-proud to present our FX Green Investment Program. This initiative is not merely about
-navigating the complexities of the foreign exchange markets for profit but also about
-channeling those profits into tangible, positive environmental impacts. Here’s a
-comprehensive exploration of what this program offers, the inherent risks, and how your
-investment can be part of a larger, greener narrative.<br>
-<b>The FX Market: A Landscape of Opportunity and Risk
-Understanding Volatility:</b><br>
-The FX market is one of the most volatile financial arenas globally, characterized by:<br>
-        <ul>
-<li> Market Fluctuations: Currencies can shift in value due to a myriad of influences
-ranging from economic indicators to unexpected geopolitical events.</li>
-<li> High Liquidity: While this leads to potential for rapid trading, it also means rapid
-losses can occur.</li>
-<li> Leverage Risks: Trading with leverage can amplify both gains and losses,
-making the investment landscape even more unpredictable.</li>
-        </ul>
-
-<b>Profit Expectancy:</b><br>
-We estimate profits could range from 0% to 200% of your invested capital. This broad<br>
-spectrum reflects the speculative nature of FX trading, where:<br>
-<ul>
-<li>AI-Driven Insights: We utilize cutting-edge AI to forecast trends, especially in
-gold, aiming for the higher end of the profit scale.</li>
-<li> Market Unpredictability: Conversely, the lower end acknowledges the potential
-for no profit, or even losses, due to market downturns or misjudged strategies.</li>
-</ul>
-
-<b>Investment Terms and Conditions</b><br>
-<b>No Refund of Capital:</b><br>
-Once your capital is committed to our trading pool, it becomes part of our collective<br>
-investment strategy with no possibility for refunds. This is crucial to understand as it<br>
-reflects the long-term commitment required in FX trading
-    </div>
-    
-        <script>
-            function showText(text) {
+<script>
+    function showText(text) {
         const clock = document.getElementById('clock');
         const contentBox = document.getElementById('contentBox');
         
@@ -345,6 +160,8 @@ reflects the long-term commitment required in FX trading
         const timeString = now.toLocaleTimeString([], options);
         document.getElementById('clock').innerText = `${timeString} TIME IS MONEY!`;
     }, 1000);
+
+  
             
              let slideIndex = 0;
 
@@ -365,6 +182,4 @@ reflects the long-term commitment required in FX trading
     }, 5000);
         </script>
 </body>
-    
-
 </html>
