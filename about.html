@@ -23,7 +23,7 @@
     <meta name="twitter:description" content="Copy Trade Provider and FOREX Trade Tutorial Giant." />
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
-     <style>
+      <style>
         body {
             font-family: Arial, sans-serif;
             position: relative;
@@ -33,10 +33,10 @@
         }
         .navbar {
             display: flex;
-            background-color: white; /* Set a background color */
+            background-color: none;
             padding: 10px;
             position: sticky;
-            top: 120px;
+            top: 110px;
             z-index: 10;
             justify-content: center;
             gap: 50px;
@@ -58,7 +58,7 @@
             top: 100%;
             left: 0;
             min-width: 150px;
-            z-index: 40; /* Higher z-index to float above the clock container */
+            z-index: 20;
         }
         .navbar-item:hover .dropdown {
             display: block; /* Show dropdown on hover */
@@ -73,6 +73,12 @@
         .dropdown-item:hover {
             background-color: green; /* Change background on hover */
             color: white; /* Change text color on hover */
+        }
+        .slide {
+            width: 100%;
+            height: 100vh; /* Full height for slide */
+            background: url('your-slide-image.jpg') no-repeat center center/cover; /* Replace with your slide image */
+            position: relative; /* Position relative for overlay */
         }
         .clock-container {
             display: flex;
@@ -91,7 +97,7 @@
             transform: translate(-50%, -50%); /* Adjust position to truly center */
             overflow: hidden;
             z-index: 30; /* Higher z-index to float above other elements */
-            margin-top: 20px; /* Space between dropdown and clock container */
+            margin-top: 30px; /* Space between dropdown and clock container */
         }
         #contentBox {
             max-height: 300px; /* Adjust max height for scrolling */
