@@ -23,26 +23,62 @@
     <meta name="twitter:description" content="Copy Trade Provider and FOREX Trade Tutorial Giant." />
     <meta name="twitter:image" content="https://www.monimatrix.com/suck.jpg" />
     <meta name="twitter:site" content="@monimatric" />
-   <style>
+  <style>
         body {
             font-family: Arial, sans-serif;
-            position: relative; /* Required for absolute positioning of the clock */
+            position: relative;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevent scrollbars on body */
         }
-        .nav {
-            background-color: #333;
-            overflow: hidden;
+        .navbar {
+            display: flex;
+            background-color: white;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            justify-content: center;
+            gap: 50px;
         }
-        .nav a {
-            float: left;
-            display: block;
-            color: white;
-            padding: 14px 16px;
-            text-align: center;
+        .navbar-item {
+            position: relative;
+            margin-right: 20px;
+        }
+        .navbar-link {
             text-decoration: none;
-        }
-        .nav a:hover {
-            background-color: #ddd;
+            padding: 10px 15px;
             color: black;
+            display: inline-block;
+        }
+        .dropdown {
+            display: none; /* Initially hidden */
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            z-index: 20;
+        }
+        .navbar-item:hover .dropdown {
+            display: block; /* Show dropdown on hover */
+        }
+        .dropdown-item {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            display: block;
+            background-color: white; /* Default background */
+        }
+        .dropdown-item:hover {
+            background-color: green; /* Change background on hover */
+            color: white; /* Change text color on hover */
+        }
+        .slide {
+            width: 100%;
+            height: 100vh; /* Full height for slide */
+            background: url('your-slide-image.jpg') no-repeat center center/cover; /* Replace with your slide image */
+            position: relative; /* Position relative for overlay */
         }
         .clock-container {
             display: flex;
@@ -55,28 +91,29 @@
             border: 2px solid black;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            top: 250px;
+            position: fixed; /* Fixed to stay above the slide */
+            top: 50%; /* Center vertically */
             left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust position to truly center */
-            overflow: hidden; /* Hide overflow to prevent scrollbar in clock */
-             z-index: 30;
+            transform: translate(-50%, -50%); /* Adjust position to truly center */
+            overflow: hidden;
+            z-index: 30; /* Higher z-index to float above other elements */
+            margin-top: 20px; /* Space between dropdown and clock container */
         }
         #contentBox {
-            max-height: 100px; /* Limit height for scrolling */
+            max-height: 300px; /* Adjust max height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
             opacity: 1;
             transition: opacity 0.5s ease;
-            font-size: 36px; /* Bigger font size */
-            font-weight: bold; /* Bold text */
+            font-size: 24px; /* Adjust font size as needed */
+            font-weight: bold;
             display: none; /* Initially hidden */
+            width: 100%; /* Take full width of the container */
         }
         .content {
-            font-size: 36px; /* Bigger font size */
-            font-weight: bold; /* Bold text */
+            font-size: 36px;
+            font-weight: bold;
         }
     </style>
-       
 </head>
 <body>
     <header>
@@ -98,10 +135,35 @@
                 </ul>
             </nav>
     </header>
-  <div class="nav">
-    <a href="#" onclick="showText('Content for Item 1: This is an example of long content that might need scrolling.')">Item 1</a>
-    <a href="#" onclick="showText('Content for Item 2: Here is some more text that could potentially be very long and require scrolling.')">Item 2</a>
-    <a href="#" onclick="showText('Content for Item 3: Additional content goes here and it can be quite lengthy.')">Item 3</a>
+ <div class="navbar">
+    <div class="navbar-item">
+        <a href="#" class="navbar-link" onclick="showText('Content for Home: Welcome to our website! This is some additional content that might be too long to fit in the box. Please scroll down to read more about our services and offerings.')">Home</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showText('Home Subitem 1: More details about Home Subitem 1.')">Home Subitem 1</a>
+            <a href="#" class="dropdown-item" onclick="showText('Home Subitem 2: More details about Home Subitem 2.')">Home Subitem 2</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link" onclick="showText('Content for About: Learn more about us here. We provide various services to cater to your needs. For more information, please scroll down.')">About</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showText('About Subitem 1: More details about About Subitem 1.')">About Subitem 1</a>
+            <a href="#" class="dropdown-item" onclick="showText('About Subitem 2: More details about About Subitem 2.')">About Subitem 2</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link" onclick="showText('Content for Services: These are the services we offer. Our offerings include a wide range of options designed to meet your requirements. Scroll down for more details.')">Services</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showText('Services Subitem 1: More details about Services Subitem 1.')">Services Subitem 1</a>
+            <a href="#" class="dropdown-item" onclick="showText('Services Subitem 2: More details about Services Subitem 2.')">Services Subitem 2</a>
+        </div>
+    </div>
+    <div class="navbar-item">
+        <a href="#" class="navbar-link" onclick="showText('Content for Contact: Get in touch with us! Feel free to reach out via email or phone. We would love to hear from you!')">Contact</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-item" onclick="showText('Contact Subitem 1: More details about Contact Subitem 1.')">Contact Subitem 1</a>
+            <a href="#" class="dropdown-item" onclick="showText('Contact Subitem 2: More details about Contact Subitem 2.')">Contact Subitem 2</a>
+        </div>
+    </div>
 </div>
 
 <div class="clock-container">
@@ -138,13 +200,13 @@
     </div>
     </section>
 <script>
-    function showText(text) {
+     function showText(text) {
         const clock = document.getElementById('clock');
         const contentBox = document.getElementById('contentBox');
-        
+
         // Fade out the clock
         clock.style.opacity = '0';
-        
+
         // After fading out, update the content and fade it in
         setTimeout(() => {
             clock.style.display = 'none'; // Hide clock
@@ -161,7 +223,6 @@
         const timeString = now.toLocaleTimeString([], options);
         document.getElementById('clock').innerText = `${timeString} TIME IS MONEY!`;
     }, 1000);
-
   
             
              let slideIndex = 0;
