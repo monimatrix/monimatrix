@@ -102,7 +102,6 @@
         #contentBox {
             max-height: 200px; /* Adjust max height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
-            opacity: 1;
             transition: opacity 0.5s ease;
             font-size: 24px; /* Adjust font size as needed */
             font-weight: bold;
@@ -113,6 +112,10 @@
             font-size: 36px;
             font-weight: bold;
         }
+          #clock, #contentBox {
+    transition: opacity 0.5s ease;
+}
+
     </style>
   </head>
 <body>
@@ -299,20 +302,19 @@ sustainable investment practices.')">Advantages of Joining Monimatrix</a>
     </section>
 <script>
      function showText(text) {
-        const clock = document.getElementById('clock');
-        const contentBox = document.getElementById('contentBox');
+    const clock = document.getElementById('clock');
+    const contentBox = document.getElementById('contentBox');
 
-        // Fade out the clock
-        clock.style.opacity = '0';
+    // Ensure the clock disappears
+    clock.style.opacity = '0';
 
-        // After fading out, update the content and fade it in
-        setTimeout(() => {
-            clock.style.display = 'none'; // Hide clock
-            contentBox.innerHTML = text; // Set new content
-            contentBox.style.display = 'block'; // Show new content
-            contentBox.style.opacity = '1'; // Fade in the new content
-        }, 500); // Time to match the fade out duration
-    }
+    setTimeout(() => {
+        clock.style.display = 'none'; // Completely remove the clock display
+        contentBox.innerHTML = text; // Set new content
+        contentBox.style.display = 'block'; // Make it visible
+        contentBox.style.opacity = '1'; // Fade in effect
+    }, 500); // Time to match the fade out duration
+}
 
     // Set initial clock in 12-hour format
     setInterval(() => {
