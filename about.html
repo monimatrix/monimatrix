@@ -103,15 +103,15 @@
     margin-top: 30px;
 }
 
-        #contentBox {
-            max-height: 500px; /* Adjust max height for scrolling */
-            overflow-y: auto; /* Enable vertical scrolling */
-            transition: opacity 0.5s ease;
-            font-size: 24px; /* Adjust font size as needed */
-            font-weight: bold;
-            display: none; /* Initially hidden */
-            width: 100%; /* Take full width of the container */
-        }
+       #contentBox {
+    max-height: 300px; /* Adjust height */
+    overflow-y: auto; /* Enable scrolling for long content */
+    font-size: 20px; /* Make text readable */
+    font-weight: bold;
+    display: none; /* Initially hidden */
+    width: 100%; /* Full width inside the container */
+}
+
         .content {
             font-size: 36px;
             font-weight: bold;
@@ -146,60 +146,30 @@
     <div class="navbar-item">
         <a href="#" class="navbar-link" onclick="showText(event, 'Welcome to our website! Learn more about us.')">About Us</a>
         <div class="dropdown">
-<a href="#" class="dropdown-item" onclick="showText('Monimatrix Multiventures is a dynamic Nigerian enterprise that has
-carved a niche for itself in the bustling world of foreign exchange (FX)
-trading and beyond. With a registration number of 7447941 and a Tax
-Identification Number (TIN) of 1074059732, the company ensures
-transparency and credibility in its operations. Operating under the
-umbrella of general contracts and merchandise, Monimatrix has
-diversified its offerings to cater to a wide array of financial needs and
-educational interests within the Nigerian market.
-At its core, Monimatrix is known for its FX signal services, which are
-pivotal for investors looking to navigate the volatile waters of the foreign
-exchange market. The company leverages advanced AI technologies to
-analyze market trends, offering subscribers the opportunity to copy
-perfect trade orders executed by AI. This service is designed to minimize
-the risks associated with manual trading while maximizing potential
-returns through data-driven decisions. The AI-driven approach not only
-caters to seasoned traders but also to those new to the FX market,
-providing them with a tool to learn and potentially profit from the market
-with less hands-on experience.
-Education is another cornerstone of Monimatrix;s offerings. They provide
-an FX lecture series which is split into two segments. The first is a free
-lecture series aimed at demystifying the basics of FX trading for the
-general public, making financial literacy accessible to all who are
-interested. This initiative helps in building a knowledgeable investor base
-in Nigeria, promoting financial independence and empowerment. On the
-other hand, there is a paid lecture series which delves deeper into
-advanced trading strategies, market analysis, and risk management
-techniques. This is tailored for those who wish to step up their trading
-game, providing them with sophisticated insights that could lead to better
-trading outcomes.
-Monimatrix also extends its operations into affiliate marketing through its
-HFM Affiliates Enrolment program. Here, they not only introduce clients
-to their preferred broker, HFM, but also provide free training to ensure
-that these clients are well-equipped to understand the nuances of
-trading through this platform. This dual approach of training and
-introduction helps in nurturing a community of traders who are both
-informed and well-supported')">Disadvantage of Joining Monimatrix</a>
-<a href="#" class="dropdown-item" onclick="showText('About Subitem 1: More details about About Subitem 1.')">Our Motto</a>  
-<a href="#" class="dropdown-item" onclick="showText('About Subitem 1: More details about About Subitem 1.')">Fund Safety</a>
-<a href="#" class="dropdown-item" onclick="showText('About Subitem 1: More details about About Subitem 1.')">Advice</a>
+<a href="#" class="dropdown-item" onclick="showText('Welcome to Monimatrix!')">About Us</a>
+<a href="#" class="dropdown-item" onclick="showText('Our Motto: Trade Smart, Earn More!')">Our Motto</a>
+<a href="#" class="dropdown-item" onclick="showText('Fund Safety: Your funds are secure with us.')">Fund Safety</a>
+<a href="#" class="dropdown-item" onclick="showText('Advice: Learn before you earn!')">Advice</a>
 
         </div>
     </div>
     <div class="navbar-item">
         <a href="#" class="navbar-link" onclick="showText('Content for About: Learn more about us here. We provide various services to cater to your needs. For more information, please scroll down.')">Join our Tutorial classes</a>
         <div class="dropdown">
-            <a href="#" class="dropdown-item" onclick="showText('About Subitem 1: More details about About Subitem 1.')">About Subitem 1</a>
-            <a href="#" class="dropdown-item" onclick="showText('About Subitem 2: More details about About Subitem 2.')">About Subitem 2</a>
-        </div>
+            <a href="#" class="dropdown-item" onclick="showText('Welcome to Monimatrix!')">About Us</a>
+<a href="#" class="dropdown-item" onclick="showText('Our Motto: Trade Smart, Earn More!')">Our Motto</a>
+<a href="#" class="dropdown-item" onclick="showText('Fund Safety: Your funds are secure with us.')">Fund Safety</a>
+<a href="#" class="dropdown-item" onclick="showText('Advice: Learn before you earn!')">Advice</a>
+
     </div>
     <div class="navbar-item">
         <a href="#" class="navbar-link" onclick="showText('Content for Services: These are the services we offer. Our offerings include a wide range of options designed to meet your requirements. Scroll down for more details.')">Copy our Trade via our HFM Broker Portal</a>
         <div class="dropdown">
-            <a href="#" class="dropdown-item" onclick="showText('Services Subitem 1: More details about Services Subitem 1.')">Services Subitem 1</a>
-            <a href="#" class="dropdown-item" onclick="showText('Services Subitem 2: More details about Services Subitem 2.')">Services Subitem 2</a>
+            <a href="#" class="dropdown-item" onclick="showText('Welcome to Monimatrix!')">About Us</a>
+<a href="#" class="dropdown-item" onclick="showText('Our Motto: Trade Smart, Earn More!')">Our Motto</a>
+<a href="#" class="dropdown-item" onclick="showText('Fund Safety: Your funds are secure with us.')">Fund Safety</a>
+<a href="#" class="dropdown-item" onclick="showText('Advice: Learn before you earn!')">Advice</a>
+
         </div>
     </div>
 </div>
@@ -238,20 +208,21 @@ informed and well-supported')">Disadvantage of Joining Monimatrix</a>
     </div>
     </section>
 <script>
-     function showText(text) {
+    function showText(text) {
     const clock = document.getElementById('clock');
     const contentBox = document.getElementById('contentBox');
 
-    // Ensure the clock disappears
+    // Hide the clock
     clock.style.opacity = '0';
 
     setTimeout(() => {
-        clock.style.display = 'none'; // Completely remove the clock display
-        contentBox.innerHTML = text; // Set new content
-        contentBox.style.display = 'block'; // Make it visible
+        clock.style.display = 'none'; // Hide clock
+        contentBox.innerHTML = text; // Insert the new content
+        contentBox.style.display = 'block'; // Show content box
         contentBox.style.opacity = '1'; // Fade in effect
-    }, 500); // Time to match the fade out duration
+    }, 500);
 }
+
 
     // Set initial clock in 12-hour format
     setInterval(() => {
