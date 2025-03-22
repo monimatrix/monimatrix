@@ -52,14 +52,17 @@
             display: inline-block;
         }
         .dropdown {
-            display: none; /* Initially hidden */
-            position: absolute;
-            background-color: white;
-            top: 100%;
-            left: 0;
-            min-width: 150px;
-            z-index: 1000;
-        }
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    max-height: 200px; /* Set max height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 1000;
+}
+
         .navbar-item:hover .dropdown {
             display: block; /* Show dropdown on hover */
         }
@@ -81,24 +84,25 @@
             position: relative; /* Position relative for overlay */
         }
         .clock-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 600px;
-            height: 350px;
-            padding: 20px;
-            background-color: white;
-            border: 2px solid black;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: fixed; /* Fixed to stay above the slide */
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust position to truly center */
-            overflow: hidden;
-            z-index: 30; /* Higher z-index to float above other elements */
-            margin-top: 30px; /* Space between dropdown and clock container */
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 350px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto; /* Enable scrolling when content overflows */
+    z-index: 30;
+    margin-top: 30px;
+}
+
         #contentBox {
             max-height: 500px; /* Adjust max height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
