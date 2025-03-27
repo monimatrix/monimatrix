@@ -165,29 +165,7 @@
     color: #141414;
   }
   
-  .menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    z-index: 1000;
-  }
   
-  .menu-list {
-    list-style-type: none;
-    display: flex;
-    gap: 0.5rem;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-  }
-  
-  .menu-item:last-child {
-    width: 33px;
-    height: 20px;
-    border-radius: 3px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
   
   .nig-green {
     background-color: #349101;
@@ -196,16 +174,7 @@
 
 
 
-  .about-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px auto; /* Centers the items horizontally */
-    padding: 15px;
-    background: #fff;
-    cursor: pointer;
-    text-align: center; /* Centers text content inside the items */
-    width: 80%; /* Optional: Controls the width of the items */
-  }
+ 
   
 
   .about-item-top {
@@ -469,106 +438,6 @@
   
   
   
-  /* ================= A B O U T ================== */
-  
-  .about-main {
-    height: auto;
-  }
-  
-  .about-top {
-    height: 100%;
-  }
-  
-  .about-top .top-con {
-    margin: 7rem 0 5rem;
-  }
-  
-  .about-list {
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-  }
-  
-  .about-item {
-    padding: 1.5rem 1rem;
-    width: 100%;
-    border-bottom: 1px solid #eeeeee;
-    user-select: none;
-    transition: all 0.3s ease;
-  }
-  
-  .about-item-top {
-    display: flex;
-    justify-content: space-between;
-    font-size: 17px;
-    font-weight: 500;
-  }
-  
-  .about-item:last-child {
-    border-bottom: none;
-  }
-  
-  .about-list p, .about-list ol {
-    line-height: 1.6;
-    margin: 1.5rem 0 0.5rem;
-    font-size: 15px;
-  }
-  
-  .about-item-desc-con {
-    overflow: hidden;
-  }
-  
-  .about-item-desc-con a {
-    color: #006989;
-  }
-  
-  .about-item-open {
-    display: grid;
-    grid-template-rows: 1fr;
-    transition: all 0.5s ease;
-  }
-  
-  .about-item-close {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: all 0.5s ease;
-  }
-  
-  
-  
-  /* Add styles for your page here */
-  .about-main { font-family: Arial, sans-serif; padding: 20px; }
-  .about-list { list-style: none; padding: 0; }
-  .about-item { margin: 10px 0; cursor: pointer; }
-  .about-item-top { display: flex; justify-content: space-between; align-items: center; }
-  .about-item-desc-con { padding: 10px; background-color: #f9f9f9; }
-  .about-item-close { display: none; }
-  .about-item-open { display: block; }
-  .rotate-0 { transform: rotate(0deg); transition: transform 0.3s; }
-  .rotate-180 { transform: rotate(180deg); transition: transform 0.3s; }
-  
-  
-
-  /*================ Agreement ================*/
-  .download-link {
-    display: none; /* Initially hidden */
-    margin-top: 10px;
-    text-decoration: none;
-    color: blue;
-    cursor: pointer;
-}
-.disabled {
-    color: gray;
-    cursor: not-allowed;
-}
-.download-link a:hover{
-  color: red;
-}
-  
-  
-  
-  
-  
   
   
   /* ===================  M E D I A - Q U E R Y  =================== */
@@ -610,25 +479,7 @@
       width: calc(100% - 2rem);
     }
   
-    .about-top .top-con {
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 9rem;
-    }
-  
-    .about-list {
-      width: 100%;
-    }
-  
-    .about-item-top {
-      font-size: 16px;
-    }
-  
-    .about-item p {
-      font-size: 14px;
-    }
-  
-  }
+    
   
   
   @media (max-width: 600px) {
@@ -663,45 +514,4 @@
             margin-top: 10px;
 
 
-             .navbar {
-            display: flex;
-            background-color: white;
-            padding: 10px;
-        }
-        .navbar-item {
-            position: relative;
-            margin-right: 20px;
-        }
-        .navbar-link {
-            text-decoration: none;
-            padding: 10px 15px;
-            color: black;
-            display: inline-block;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: white;
-            top: 100%;
-            left: 0;
-            min-width: 150px;
-            z-index: 1;
-        }
-        .navbar-item:hover .dropdown {
-            display: block;
-        }
-        .dropdown-item {
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-item:hover {
-            background-color: green;
-            color: white;
-        }
-            background-color: white;
-            color: black;
-            padding: 10px;
-            border: 1px solid red;
-        }
+           
