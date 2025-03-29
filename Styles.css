@@ -657,6 +657,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
             z-index: 1000;
+            height: 10px;
         }
         .contact-content {
             display: none;
