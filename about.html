@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Dooyaabari Imeah">
+    
     <!--This website was designed by Dooyaabari Imeah-->
     <title>Monimatrix</title>
-    <link rel="stylesheet" href="Styles.css">
     <!--sticky header-->
     <!-- Open Graph Tags -->
     <meta property="og:title" content="MONIMATRIX" />
@@ -17,7 +15,7 @@
     <meta property="og:url" content="https://monimatrix.com" />
     <meta property="og:type" content="website" />
     <meta property=og:image alt="MONIMATRIX - CopyTrade to profits" />
-    
+    <link rel="stylesheet" href="Styles.css"
     <!-- Twitter Card Tags (optional) -->
     <meta name="twitter:card" content="summary" /> <!-- Use "summary" for a smaller image -->
     <meta name="twitter:title" content="MONIMATRIX" />
@@ -32,15 +30,16 @@
             background-color: #f4f4f4;
             height: 100vh; /* Full viewport height */
             position: relative;
+            flex-direction: column; /* Stack elements vertically */
         }
         .navigation {
             display: flex;
             gap: 10px; /* Space between menu items */
             justify-content: center;
             position: sticky;
-            z-index: 1000;
+            z-index: 2000;
             background-color: none;
-            top: 200px;
+            top: 110px;
         }
         .nav-item {
             position: relative;
@@ -54,12 +53,12 @@
             display: none;
             position: absolute;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            z-index: 2000;
             padding: 10px;
             border-radius: 5px;
             min-width: 150px;
-    max-height: 200px; /* Set max height */
-    background-color: none;
+            max-height: 200px; /* Set max height */
+            background-color: none;
         }
         .nav-item:hover .dropdown {
             display: block;
@@ -68,7 +67,56 @@
             background: green; /* Dropdown item hover color */
             color: white; /* Text color on hover */
         }
+        /* CSS Code for the slider in the home page */
         .slide {
+            width: 100%;
+            height: 100vh; /* Full height for slide */
+            background: url('your-slide-image.jpg') no-repeat center center/cover; /* Replace with your slide image */
+            position: relative; /* Position relative for overlay */
+        }
+.active {
+    background-color: #717171;
+}
+        .clock-container {
+            width: 600px;
+            height: 350px; 
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: absolute;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            z-index: 1000;
+            left: 22%;
+            top: 40%;
+            flex: 1; /* Take up remaining space */
+        }
+        .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+        .clock {
+            font-size: 48px;
+            text-align: center;
+            margin: 0;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .content {
+            display: none; /* Initially hidden */
+            max-height: 400px; /* Set a fixed height for the content area */
+            overflow-y: auto; /* Enable vertical scroll for long content */
+            padding: 10px;
+            margin-top: 10px; /* Space between clock and content */
+            text-align: justify; /* Center the text horizontally */
+            padding-bottom: 20px; /* Add extra padding to push scrollbar up */
+        }
+.slide {
             width: 100%;
             height: 100vh; /* Full height for slide */
             background: url('your-slide-image.jpg') no-repeat center center/cover; /* Replace with your slide image */
@@ -132,46 +180,21 @@
     display: inline-block;
     cursor: pointer;
 }
-
-.active {
-    background-color: #717171;
+footer.footer {
+    background-color: #333; /* Example background color */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 20px; /* Space around the text */
+    width: 100%; /* Full width */
 }
-        .clock-container {
-            width: 600px;
-            height: 350px;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            z-index: 1000;
-            left: 20%;
-            top: 50%;
-        }
-        .clock {
-            font-size: 48px;
-            text-align: center;
-            margin: 0;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        .content {
-            display: none; /* Initially hidden */
-            max-height: 200px; /* Set a fixed height for the content area */
-            overflow-y: auto; /* Enable vertical scroll for long content */
-            padding: 10px;
-            margin-top: 10px; /* Space between clock and content */
-            text-align: center; /* Center the text horizontally */
-            padding-bottom: 20px; /* Add extra padding to push scrollbar up */
-        }
     </style>
 </head>
 <body>
+    <p>
+        <br>
+        <p>
+            <br>
+            <p>
     <header>
         <div class="sticky-header" style="z-index: 1000;">
             <b style="color: red;">Important Notice:</b><br>
@@ -318,11 +341,11 @@
             Here’s why investing in this program could be the key to unlocking your financial
             potential:
             
-            First, you&#39;ll receive comprehensive, hands-on education from seasoned traders who
+            First, you'll receive comprehensive, hands-on education from seasoned traders who
             specialize in gold market analysis, offering you insights into both traditional and AI-
-            driven trading strategies. This isn&#39;t just about learning the basics; it&#39;s about
+            driven trading strategies. This isn't just about learning the basics; it&#39;s about
             understanding the nuances of market behavior, from predicting gold price points like
-            2640 or 2650 to managing your portfolio&#39;s risk.
+            2640 or 2650 to managing your portfolio's risk.
             
             Our paid class includes personalized mentorship, where your trading strategies are
             critiqued and refined. This one-on-one attention is invaluable, allowing you to grow from
@@ -330,7 +353,7 @@
             resources, including advanced AI algorithms that can enhance your market analysis,
             giving you an edge in the fast-paced FX environment.
             
-            Moreover, you&#39;ll be part of an elite community of traders, fostering a network where you
+            Moreover, you'll be part of an elite community of traders, fostering a network where you
             can exchange ideas, strategies, and market insights. This community support is crucial,
             especially when navigating through market volatility.
             
@@ -438,36 +461,6 @@
 <div class="clock-container">
     <div class="clock" id="clock"></div>
     <div class="content" id="content"></div>
-</div>
-<section>
-    <div class="slider">
-   <div class="slides">
-       <div class="slide" style="background-color: #ff7e5f;"></div>
-       <div class="slide" style="background-color: #feb47b;"></div>
-       <div class="slide" style="background-color: #86a8e7;"></div>
-       <div class="slide" style="background-color: #91eae4;"></div>
-       <div class="slide" style="background-color: #f39c12;"></div>
-       <div class="slide" style="background-color: #ff6347;"></div>
-       <div class="slide" style="background-color: #3cb371;"></div>
-       <div class="slide" style="background-color: #00bfff;"></div>
-       <div class="slide" style="background-color: #ffccbc;"></div>
-       <div class="slide" style="background-color: #ff9a9e;"></div>
-   </div>
-  
-   <div class="dots">
-       <div class="dot active" onclick="changeSlide(0)"></div>
-       <div class="dot" onclick="changeSlide(1)"></div>
-       <div class="dot" onclick="changeSlide(2)"></div>
-       <div class="dot" onclick="changeSlide(3)"></div>
-       <div class="dot" onclick="changeSlide(4)"></div>
-       <div class="dot" onclick="changeSlide(6)"></div>
-       <div class="dot" onclick="changeSlide(7)"></div>
-       <div class="dot" onclick="changeSlide(8)"></div>
-       <div class="dot" onclick="changeSlide(9)"></div>
-       <div class="dot" onclick="changeSlide(10)"></div>
-   </div>
-</div>
-</section>
 <script>
     function updateClock() {
         const now = new Date();
@@ -516,6 +509,5 @@
         changeSlide(slideIndex);
     }, 5000);
 </script>
-
 </body>
 </html>
