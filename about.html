@@ -79,7 +79,7 @@
     background-color: #717171;
 }
         .clock-container {
-            width: 700px;
+            width: 750px;
             height: 350px; 
             background: #fff;
             border: 1px solid #ccc;
@@ -97,7 +97,7 @@
             top: 40%;
             flex: 1; /* Take up remaining space */
         }
-        .clearfix::after {
+        .after {
     content: "";
     clear: both;
     display: table;
@@ -190,6 +190,15 @@ footer.footer {
 }
         .justified {
             text-align: justify;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -548,6 +557,11 @@ footer.footer {
 <div class="clock-container">
     <div class="clock" id="clock"></div>
     <div class="content" id="content"></div>
+
+    <footer>
+        <p>Stay Connected</p>
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    </footer>
 <script>
     function updateClock() {
         const now = new Date();
