@@ -26,12 +26,12 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
             background-color: #f4f4f4;
-            height: 100vh; /* Full viewport height */
             position: relative;
             flex-direction: column; /* Stack elements vertically */
             line-height: 1.6;
+            min-height: 100vh;           /* Ensure body takes full height */
+            padding-bottom: 60px;        /* Space for footer */
         }
         .navigation {
             display: flex;
