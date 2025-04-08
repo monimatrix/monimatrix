@@ -184,6 +184,13 @@
         .justified {
             text-align: justify;
         }
+
+        footer {
+            background-color: #333;      /* Dark background for footer */
+            color: white;                /* White text color */
+            text-align: center;          /* Center text */
+            padding: 20px;               /* Padding for spacing */
+        }
     </style>
 </head>
 <body>
@@ -541,6 +548,11 @@
 <div class="clock-container">
     <div class="clock" id="clock"></div>
     <div class="content" id="content"></div>
+
+    <footer>
+        <p>Stay Connected</p>
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    </footer>
 <script>
     function updateClock() {
         const now = new Date();
