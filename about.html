@@ -583,6 +583,29 @@
   </div>
      </section>
 <script>
+ // Get references to the button and content
+    const toggleButton = document.getElementById('toggleFooter');
+    const footerContent = document.getElementById('footerContent');
+
+    // Ensure content is shown on page load
+    footerContent.classList.add('open');
+    toggleButton.textContent = '▼';
+
+    // Add click event listener for toggling
+    toggleButton.addEventListener('click', () => {
+      footerContent.classList.toggle('open');
+      toggleButton.textContent = footerContent.classList.contains('open') ? '▼' : '▶';
+    });
+
+      // Add shaking animation at intervals
+    setInterval(() => {
+      toggleButton.classList.add('shake'); // Add the shake class
+      setTimeout(() => {
+        toggleButton.classList.remove('shake'); // Remove it after animation ends
+      }, 500); // Match the animation duration (0.5s)
+    }, 5000); // Shake every 5 seconds
+
+    
     function updateClock() {
         const now = new Date();
         const timeString = now.toLocaleTimeString();
