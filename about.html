@@ -280,7 +280,6 @@
             color: black;
             padding: 10px;
             border: 1px solid red;
-            z-index: 2000;
         }
     </style>
 </head>
@@ -699,6 +698,15 @@
   </div>
      </section>
 <script>
+    
+function toggleContact() {
+        const content = document.getElementById('contactContent');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    
  // Get references to the button and content
     const toggleButton = document.getElementById('toggleFooter');
     const footerContent = document.getElementById('footerContent');
